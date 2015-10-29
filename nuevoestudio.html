@@ -1,0 +1,40 @@
+<html LANG="es">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<LINK REL="stylesheet" TYPE="text/css" HREF="estilos/estiloAdmin.css">
+<?php
+	//Creamos la sesion
+	session_start();
+	//Validamos si se ha hecho o no el inicio de sesion correctamente
+	if(!isset($_SESSION['usuario']))
+	{
+		header('Location: index.html');
+		exit();
+	}
+?> 
+<header>
+	<title>Servicio de administracion</title>
+	<img id="img" src="imagenes/bannerAdmin.png">
+</header>
+<body>
+	<div id="fondo">
+	<div id="global">
+		<div id="slide-menu">
+			<center>
+			<form method="POST">
+			    <input class="botonAdmin" type="button" value="Crear nuevo administrador" onClick="window.open('nuevoAdmin.php')"><br>
+			    <input class="botonAdmin" type="button" value="Borrar administrador" onClick="window.open('borrarAdmin.php')"><br>
+			    <input class="botonAdmin" type="button" target="blank" value="Mostrar Preguntas" onClick="window.open('portaladmin.php')"><br>
+			    <input class="botonAdmin" type="button" value="Editar y borrar preguntas" onClick="window.open('portaladmin.php')"><br>
+			    <input class="botonAdmin" type="button" value="Añadir nuevas preguntas" onClick="window.open('portalAdmin2.php')"><br>
+			    <input class="botonAdmin" type="button" value="Analizar Resultados" onClick="window.open('analisis.php')"><br>
+				<input class="botonLogout" type="button" value="Cerrar sesión" onClick="window.open('cerrarSesion.php')"><br><br>
+			</form>
+		</center>
+		</div>
+	</div>
+</div>
+
+</body>
+<footer>
+</footer>
+</html>
