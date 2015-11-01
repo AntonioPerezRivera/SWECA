@@ -1,8 +1,12 @@
 <!DOCTYPE=html>
 <html>
-<head>
-	<title> Portal del administrador </title>
-</head>
+<html LANG="es">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<LINK REL="stylesheet" TYPE="text/css" HREF="estilos/estiloAdmin.css">
+<header>
+	<title>Servicio de administracion</title>
+	<img id="img" src="imagenes/banner.png">
+</header>
 <body>
 <center>
 	<?php
@@ -27,13 +31,16 @@
 		 $consulta2 = mysql_query($sentencia2,$conexion)
 		 	or die("fallo en la consulta2");
 
+		 print "<br/>";
+		 print "<h2> Pregunas almacenadas: </h2>";
+		 print "<br/>";
 		//Mostramos resultados
 		 $num_filas = mysql_num_rows($consulta2);
 
 		 for($i=0;$i<$num_filas;$i++){
 		
 		 	$res = mysql_fetch_array($consulta2);
-		 	print "<h3> Dimension: ".$res['Nombre']."<h3>";
+		 	print "<h4> Dimension: ".$res['Nombre']."<h4>";
 
 		 	$sentencia3 = "select * from Preguntas where Dimensiones_id=".$res['id'].";";
 
@@ -69,7 +76,7 @@
 		       		}
 
 		        	print ("</TABLE>\n");
-		      	}
+		        }
 			
 				else
 	      		{
@@ -101,12 +108,35 @@
 		 }
 
 
-		 print("<br></br><button type='submit'> Eliminar preguntas seleccionadas</button>\n");
+		 print "<br></br>";
+		 print "<input type='submit' value='Eliminar seleccionadas' id='submiteliminar'>";
 		 print("</FORM");
          print("<br></br><br></br><a href='noticias.html'>Volver al inicio</a>");
+         print "<br/>";
+         print "<br/>";
+         print "<br/>";
 	
 	?>
 
 
 </body>
+	<footer class="footer-distributed">
+			<div class="footer-left">
+			<center>
+				<p class="footer-links">
+					<a href="#">Home</a>
+					·
+					<a href="#">Sobre SWECA</a>
+					·
+					<a href="#">FAQ</a>
+					·
+					<a href="#">Contacto</a>
+				</p>
+
+				<p>SWECA &copy; 2015</p>
+			</div>
+			</center>
+
+		</footer>
+
 </html>

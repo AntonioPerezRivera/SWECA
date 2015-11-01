@@ -10,9 +10,6 @@
 		$dimension =  $_POST["dimension"];
 		$texto = $_POST["pregtexto"];
 
-		print $dimension;
-		print $texto;
-
 		$conexion = mysql_connect("localhost","root","root")
  			or die("Imposible conectar con nuestro servidor");
 
@@ -29,6 +26,9 @@
 
 		 $consulta2 = mysql_query($sentencia2,$conexion)
 		 	or die("fallo en la insercion");
+
+		 print "<p> Su pregunta: '".$pregtexto."' ha sido incluida en la base de datos.";
+		 print "<a href='nuevoestudio.html' target='_parent'><button>Volver al portal del administrador</button></a>";
 		
 	?>
 

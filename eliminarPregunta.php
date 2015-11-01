@@ -50,7 +50,7 @@
 			or die("casi");
 
 		mysql_close($conexion);
-		print "<a href='nuevoestudio.html' target='_parent'><button>Volver al portal del administrador</button></a>";
+		print "<a href='indexadmin.html' target='_parent'><button>Volver al portal del administrador</button></a>";
 		print "</center>\n";
 	}
 
