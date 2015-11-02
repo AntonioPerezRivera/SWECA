@@ -20,7 +20,7 @@
 
  	
  		$n_filas = mysql_num_rows($consulta);
- 		print "<form method='post' action='estudioPreguntas.php'>";
+ 		print "<form method='post' action='no.php'>";
  		print "<select name='tipoestudio'>";
  			for($i=0;$i<$n_filas;$i++){
  				$resultado = mysql_fetch_array($consulta);
@@ -28,7 +28,7 @@
  			}
  		print "</select>";
  		print "<br/>";
- 		print "<input type='submit' value='Consultar'/>";
+ 		print "<input type='submit' value='Consultar'/>"; // Buscate la vida para q llame desde aqui a lo q sea. (php)
  		print "<br/> <br/> <a href='nuevotema.php'> Anadir nuevo tema </a>";
  		print "</form>";
 	?>

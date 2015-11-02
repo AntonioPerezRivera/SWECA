@@ -19,6 +19,27 @@
 	top:1px;
 }
 
+
+.botonLog-in {
+	background-color:#01DF3A;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	padding:9px 23px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #263666;
+	width:100%;
+}
+.botonLog-in:hover {
+	background-color:#01DFA5;
+}
+.botonLog-in:active {
+	position:relative;
+	top:1px;
+}
+
 html, body {
     margin:0;
     padding:0;
