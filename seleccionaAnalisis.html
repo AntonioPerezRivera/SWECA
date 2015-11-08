@@ -85,35 +85,49 @@
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
             <center>
     
-	<?php
-		
-		$dimension =  $_POST["dimension"];
-		$texto = $_POST["pregtexto"];
 
-		$conexion = mysql_connect("localhost","root","root")
- 			or die("Imposible conectar con nuestro servidor");
+            <h3> Seleccion de analisis </h3>
 
- 		mysql_select_db("mydb")
- 			or die("No se pudo conectar con la BD");
+            <p> Esta plataforma le permitira realizar el analisis de la satisfaccion del usuario desde dos puntos de vista distintos: <p>
 
- 		$sentenciaId = "select * from Dimensiones where Nombre='".$dimension."';";
-	
-		$consulta = mysql_query($sentenciaId,$conexion);
-		$resultado = mysql_fetch_array($consulta);
+            <br/>
+            <br/>
 
- 		//Enviamos la consulta
-		$sentencia2 = "insert into Preguntas set texto='".$texto."' ,tipo='hola' ,Dimensiones_id='".$resultado['id']."'";
-        $consulta2 = mysql_query($sentencia2,$conexion)
-		 	or die("fallo en la insercion");
 
-		 print "<h4> Su pregunta ha sido incluida en la base de datos. </h4><br/>";
-		 print "<p> Sera redirigido en 5 segundos...</p>";
-		 print "<script>";
- 		 print "function r() { location.href='indexadmin.php' }"; 
- 		 print "setTimeout ('r()', 5000);";
-		 print "</script>"; 
-         print "<br/><br/>";
-	?>
+            <h4> Analisis de sesion </h4>
+
+            <p> En este apartado usted podra analizar los distintos perfiles de los usuarios que han realizado la encuesta, ordenados por sexo,
+                tipo de usuario, navegador, campus, etcetera.
+            </p>
+
+            <form action="analisisSesion.php" method="POST">
+            <input type='submit' value='Acceder al analisis de sesion' class='btn btn-default'>
+            </form>
+            <br/>
+            <br/>
+
+
+            <br/>
+            <br/>
+
+            <h4> Analisis de satisfaccion </h4>
+
+            <p> En este apartado usted podra, filtrando los campos que considere necesarios, observar la media de satisfaccion de los usuarios 
+                para cada una de las preguntas mostradas.
+            </p>
+
+            <form action="filtroAnalisis.html" method="POST">
+            <input type='submit' value='Acceder al analisis de satisfaccion' class='btn btn-default'>
+            </form>
+            
+
+            <br/>
+            <br/>
+
+            <br/>
+            <br/>
+
+
 
     </div>
 

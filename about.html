@@ -65,14 +65,14 @@
 
     <!-- Page Header -->
     <!-- Set your background image for this header on the line below. -->
-    <header class="intro-header" style="background-image: url('img/admin.jpg')">
+    <header class="intro-header" style="background-image: url('img/encuesta.jpg')">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <div class="page-heading">
                         <h1>SWECA</h1>
                         <hr class="small">
-                        <span class="subheading">Inicio de sesion</span>
+                        <span class="subheading">About</span>
                     </div>
                 </div>
             </div>
@@ -85,35 +85,13 @@
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
             <center>
     
-	<?php
-		
-		$dimension =  $_POST["dimension"];
-		$texto = $_POST["pregtexto"];
 
-		$conexion = mysql_connect("localhost","root","root")
- 			or die("Imposible conectar con nuestro servidor");
+            <h3> Sobre SWECA </h3>
 
- 		mysql_select_db("mydb")
- 			or die("No se pudo conectar con la BD");
+            <p> SWECA surge de la necesidad de evaluar la calidad de las distintas instalaciones de la universidad de Cadiz, por medio de la medicion de la satisfaccion de los usuarios de dichas instalaciones (principalmente Alumnos, PAS y PDI). Se basa en un sistema de encuestas que permitiran a los administradores de las instalaciones la evaluacion de estas y su posterior mejora.
+            </p>
 
- 		$sentenciaId = "select * from Dimensiones where Nombre='".$dimension."';";
-	
-		$consulta = mysql_query($sentenciaId,$conexion);
-		$resultado = mysql_fetch_array($consulta);
 
- 		//Enviamos la consulta
-		$sentencia2 = "insert into Preguntas set texto='".$texto."' ,tipo='hola' ,Dimensiones_id='".$resultado['id']."'";
-        $consulta2 = mysql_query($sentencia2,$conexion)
-		 	or die("fallo en la insercion");
-
-		 print "<h4> Su pregunta ha sido incluida en la base de datos. </h4><br/>";
-		 print "<p> Sera redirigido en 5 segundos...</p>";
-		 print "<script>";
- 		 print "function r() { location.href='indexadmin.php' }"; 
- 		 print "setTimeout ('r()', 5000);";
-		 print "</script>"; 
-         print "<br/><br/>";
-	?>
 
     </div>
 
